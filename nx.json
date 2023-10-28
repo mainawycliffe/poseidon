@@ -3,8 +3,13 @@
   "targetDefaults": {
     "build": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     },
     "lint": {
       "cache": true,
@@ -17,15 +22,25 @@
     },
     "test": {
       "cache": true,
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ]
     },
     "e2e": {
       "cache": true,
-      "inputs": ["default", "^production"]
+      "inputs": [
+        "default",
+        "^production"
+      ]
     }
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -38,19 +53,40 @@
     ],
     "sharedGlobals": []
   },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
   "generators": {
     "@nx/angular:application": {
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "playwright"
+      "e2eTestRunner": "cypress",
+      "standalone": true,
+      "prefix": "app"
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "standalone": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "prefix": "app",
+      "flat": true
     },
     "@nx/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "standalone": true,
+      "prefix": "app"
+    },
+    "@nx/angular:pipe": {
+      "standalone": true
+    },
+    "@nx/angular:directive": {
+      "standalone": true
     }
   },
   "nxCloudAccessToken": "M2ZkOTM5M2UtMzYwMC00NjlkLThkODQtOGQzMTZhN2IwYzhjfHJlYWQtd3JpdGU="
