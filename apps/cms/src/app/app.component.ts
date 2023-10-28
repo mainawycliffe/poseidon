@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { UiComponent } from '@poseidon/ui';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [UiComponent],
   selector: 'poseodon-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: `
+    <!-- This just an entry point for the UI, so that users can have the CMS running on their side -->
+    <!-- Everything, including routing is handled by the @poseodon/ui package, that serves as the entry point -->
+    <app-ui></app-ui>
+  `,
 })
-export class AppComponent {
-  title = 'cms';
-}
+export class AppComponent {}

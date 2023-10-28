@@ -4,7 +4,15 @@ import {
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { COLLECTION_SCHEMA_TYPE } from '@poseodon/schemas';
+
+const collectionsSchemas: COLLECTION_SCHEMA_TYPE[] = [];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(appRoutes, withEnabledBlockingInitialNavigation())],
+  providers: [
+    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
+    // Provide the collection schemas to the app
+    { provide: 'COLLECTION_SCHEMAS', useValue: collectionsSchemas },
+    // Provide Firebase config to the app
+  ],
 };
