@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@poseidon/ui": ["packages/ui/src/index.ts"],
-      "@poseodon/schemas": ["schemas/src/index.ts"]
+      "@poseidon/schemas": ["schemas/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

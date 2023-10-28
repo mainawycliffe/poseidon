@@ -4,10 +4,10 @@ import { UiComponent } from '@poseidon/ui';
 @Component({
   standalone: true,
   imports: [UiComponent],
-  selector: 'poseodon-root',
+  selector: 'poseidon-root',
   template: `
     <!-- This just an entry point for the UI, so that users can have the CMS running on their side -->
-    <!-- Everything, including routing is handled by the @poseodon/ui package, that serves as the entry point -->
+    <!-- Everything, including routing is handled by the @poseidon/ui package, that serves as the entry point -->
     <app-ui></app-ui>
   `,
 })

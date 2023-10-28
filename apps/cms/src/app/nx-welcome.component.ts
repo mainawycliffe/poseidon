@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'poseodon-nx-welcome',
+  selector: 'poseidon-nx-welcome',
   standalone: true,
   imports: [CommonModule],
   template: `

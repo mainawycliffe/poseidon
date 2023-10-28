@@ -4,7 +4,7 @@ import {
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
 import { appRoutes } from './app.routes';
-import { COLLECTION_SCHEMA_TYPE } from '@poseodon/schemas';
+import { COLLECTION_SCHEMA_TYPE } from '@poseidon/schemas';
 
 const collectionsSchemas: COLLECTION_SCHEMA_TYPE[] = [];
 
